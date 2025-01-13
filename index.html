@@ -3,47 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Número Aleatorio</title>
+    <title>Botón de Nombre Aleatorio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
-            background-color: #d8bfd8; /* Lila */
-        }
-        #random-number {
-            font-size: 200px;
-            color: #333;
-            margin: 20px 0;
+            background-color: #D8BFD8;
         }
         button {
-            font-size: 20px;
+            position: absolute;
+            bottom: 20px;
             padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
-            border: none;
-            background-color: #4CAF50;
+            background-color: #007BFF;
             color: white;
+            border: none;
             border-radius: 5px;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
+        }
+        #nombre {
+            font-size: 144px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div id="random-number">-</div>
-    <button onclick="generateRandomNumber()">Generar Número Aleatorio</button>
+    <div id="nombre">Haz clic en el botón para mostrar un nombre</div>
+    <button onclick="mostrarNombreAleatorio()">Mostrar Nombre</button>
 
     <script>
-        function generateRandomNumber() {
-            const numbers = [1, 3, 4, 5, 6, 8, 9, 10, 11, 13, 15, 17, 18];
-            const randomIndex = Math.floor(Math.random() * numbers.length);
-            const randomNumber = numbers[randomIndex];
-            document.getElementById('random-number').textContent = randomNumber;
+        const nombres = ["Indhira", "Enma", "Nerea", "Aya", "Rubén", "Iván", "Paula", "Daniela", "Sara", "Alex", "Adrián", "Javier", "Lucas", "Jorge", "Samuel"];
+
+        function mostrarNombreAleatorio() {
+            const indiceAleatorio = Math.floor(Math.random() * nombres.length);
+            const nombreAleatorio = nombres[indiceAleatorio];
+            document.getElementById('nombre').textContent = nombreAleatorio;
         }
     </script>
 </body>
